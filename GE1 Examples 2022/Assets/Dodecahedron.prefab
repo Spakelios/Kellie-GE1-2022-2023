@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 726070634188330489}
   - component: {fileID: 3312241588330275123}
   - component: {fileID: -6743254270196355021}
-  - component: {fileID: -6466453639650142309}
   m_Layer: 0
   m_Name: Dodecahedron
   m_TagString: Untagged
@@ -29,11 +28,11 @@ Transform:
   m_GameObject: {fileID: 3960790926373945574}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -44.15773, y: -11.45, z: 45.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -17.559732, y: -18.286726, z: -17.671577}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &726070634188330489
 MeshFilter:
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1360991219368177298, guid: 58812e26813381a43be492250ef3dcad, type: 3}
+  - {fileID: 2100000, guid: 8c9ccb6af54334e4389ca90d76937391, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,16 +96,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4efde99ce5ebc48a8d7739eadb367f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 90
---- !u!114 &-6466453639650142309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3960790926373945574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a547510ec1f3bbf448bb1479d006b3d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  speed: 5
