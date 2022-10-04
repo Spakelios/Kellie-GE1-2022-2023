@@ -9,12 +9,9 @@ using UnityEngine.UI;
 
 public class Generator : MonoBehaviour
 {
-    public int loops = 1;
+    public int loops = 0;
     public GameObject prefab;
-    
-    private Material newMat;
-    public static string newDo;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,44 +20,35 @@ public class Generator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-
+        // generated(0, Vector3.one, 0);
+        
         if (Input.GetKeyDown(KeyCode.A))
         {
-            generated(1, Vector3.left, 0);
-            newMat = prefab.GetComponent<MeshRenderer>().material;
-            newMat.color = Color.yellow;
-
+            generated(10, default, 100);
+        
         }
     }
 
-    public void generated(int num, Vector3 point, float radius)
+    public void generated(int loops, Vector3 point, float radius)
     {
     
-        for (int i = 0; i < num; i++)
+        for (int i = 0; i < this.loops; i++)
         {
+            var radians = 2 * Mathf.PI / this.loops * i;
     
-            /* Distance around the circle */
-            var radians = 2 * Mathf.PI / num * i;
-    
-            /* Get the vector direction */
+           
             var vertical = Mathf.Sin(radians);
             var horizontal = Mathf.Cos(radians);
     
-            var spawnDir = new Vector3(horizontal, 10, vertical);
-    
-            /* Get the spawn position */
-            var spawnPos = point + spawnDir * radius; // Radius is just the distance away from the point
-    
-            /* Now spawn */
+            // var spawnDir = new Vector3(horizontal, 0, vertical);
+            
+            var spawnDir = new Vector3(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
+            
+            var spawnPos = point + spawnDir * radius; 
+            
             var enemy = Instantiate(prefab, spawnPos, Quaternion.identity) as GameObject;
-    
-            /* Rotate the enemy to face towards player */
-            enemy.transform.LookAt(point);
-    
-            /* Adjust height */
-            enemy.transform.Translate(new Vector3(0, enemy.transform.localScale.y / 2, 0));
         }
     }
 }
