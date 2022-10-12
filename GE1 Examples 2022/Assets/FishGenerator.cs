@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
+using Random = System.Random;
 
 public class FishGenerator : MonoBehaviour
 {
     [SerializeField] private Transform head;
     [SerializeField] private Transform tail;
 
-    [Range(0, 40)] public float frequency;
+    [Range(0, 5f)] public float frequency;
     void Start()
     {
         {
@@ -35,14 +37,22 @@ public class FishGenerator : MonoBehaviour
             cube3.transform.localPosition = new Vector3(-3, 0, 0);
             cube3.GetComponent<Renderer>().material.color = Color.grey;
             cube3.transform.localRotation = Quaternion.AngleAxis(frequency, Vector3.forward);
-            Mathf.Sin(Time.time * frequency); 
+
         }
 
     }
+    
+    public float theta = 40;
 
     private void Update()
     {
-        tail.transform.localRotation = Quaternion.AngleAxis(frequency, Vector3.forward);
-        Mathf.Sin(Time.time * frequency); 
+        {
+            tail.transform.localRotation = Quaternion.AngleAxis(theta * frequency, Vector3.forward);
+            head.transform.localRotation = Quaternion.AngleAxis(theta * frequency, Vector3.forward);
+            Mathf.Sin(theta);
+
+        }
     }
+
 }
+
