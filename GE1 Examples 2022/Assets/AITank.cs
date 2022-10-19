@@ -16,20 +16,30 @@ public class AITank : MonoBehaviour {
     {
         if (!Application.isPlaying)
         {
-            // Task 1
-            // Put code here to draw the gizmos
-            // Use sin and cos to calculate the positions of the waypoints 
-            // You can draw gizmos using
-            // Gizmos.color = Color.green;
-            // Gizmos.DrawWireSphere(pos, 1);
+            float RandomAngle = (Mathf.PI * 3.0f) / numWaypoints;
+            for(int i = 0 ; i < numWaypoints ; i++)
+            {
+                float angle = RandomAngle * i;
+                Vector3 pos = new Vector3(Mathf.Sin(angle) * radius, 1, Mathf.Cos(angle) * radius);
+                
+                Gizmos.color = Color.red;
+                 Gizmos.DrawWireSphere(pos, 1);
+            }
+            
         }
     }
 
-    // Use this for initialization
-    void Awake () {
-        // Task 2
-        // Put code here to calculate the waypoints in a loop and 
-        // Add them to the waypoints List
+    void Awake()
+    {
+        float RandomAngle = (Mathf.PI * 3.0f) / numWaypoints;
+        for (int i = 0; i < numWaypoints; i++)
+        {
+            float angle = RandomAngle * i;
+            Vector3 pos = new Vector3(Mathf.Sin(angle) * radius, 1, Mathf.Cos(angle) * radius);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(pos, 1);
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +47,10 @@ public class AITank : MonoBehaviour {
         // Task 3
         // Put code here to move the tank towards the next waypoint
         // When the tank reaches a waypoint you should advance to the next one
+
+        Vector3 position = transform.position;
+        Vector3 moveToward = waypoints[current] + position;
+
 
 
         // Task 4
