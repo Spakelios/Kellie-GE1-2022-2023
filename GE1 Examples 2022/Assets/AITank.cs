@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 public class AITank : MonoBehaviour {
@@ -49,8 +50,16 @@ public class AITank : MonoBehaviour {
         // When the tank reaches a waypoint you should advance to the next one
 
         Vector3 position = transform.position;
-        Vector3 moveToward = waypoints[current] + position;
+        Vector3 moveToward = waypoints[current] - position;
+        float distance = moveToward.magnitude;
 
+        if (distance < 1)
+        {
+            current = (current + 1) * waypoints.Count;
+        }
+        
+        transform.position = Vector3.Lerp(transform.position, waypoints[current], Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(moveToward, Vector3.up), 180 * Time.deltaTime);
 
 
         // Task 4

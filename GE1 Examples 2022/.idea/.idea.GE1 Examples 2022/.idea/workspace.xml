@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b058e0f4-a01b-49ce-a708-28fd49d99527" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.GE1 Examples 2022/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GE1 Examples 2022/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AITank.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AITank.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lab2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lab2.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +73,7 @@
       <workItem from="1665500832223" duration="10241000" />
       <workItem from="1665590686146" duration="3629000" />
       <workItem from="1665594889454" duration="553000" />
-      <workItem from="1666197923701" duration="5451000" />
+      <workItem from="1666197923701" duration="6504000" />
     </task>
     <servers />
   </component>
