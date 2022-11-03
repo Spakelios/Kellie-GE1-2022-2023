@@ -6,28 +6,27 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
+    public GameObject g;
     System.Collections.IEnumerator Spawn()
     {
         while(true)
         {
-            GameObject g = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            g.AddComponent<Rigidbody>();
-            g.AddComponent<Renderer>();
-            g.GetComponent<Renderer>().material.color = Color.magenta;
-            g.transform.position = Random.transform.position;
+            // GameObject g = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            // g.AddComponent<Rigidbody>();
+            // g.AddComponent<Renderer>();
+            // g.GetComponent<Renderer>().material.color = Color.magenta;
+            Instantiate(g);
 
             DataStorage.block++;
 
             yield return new WaitForSeconds(1f);
 
-            if (DataStorage.block >= 5)
+            if (DataStorage.block >= 4)
             {
-                yield break;
+               yield break;
             }
-            else if (DataStorage.block <= 5)
-            {
-                yield return g;
-            }
+            
+          
         }
     }
     
@@ -40,5 +39,9 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DataStorage.block <= 0)
+        {
+            DataStorage.block = 0;
+        }
     }
 }

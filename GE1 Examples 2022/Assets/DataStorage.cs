@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class DataStorage : ScriptableObject
 {
-    public static int block;
+    public static int block = 1;
 }
