@@ -10,7 +10,7 @@ public class TankController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform spawnPoint;
 
-    public float fireRate = 5;
+    public float fireRate = 1;
 
     void Awake()
     {

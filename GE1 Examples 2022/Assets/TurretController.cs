@@ -12,9 +12,10 @@ public class TurretController : MonoBehaviour
     public bool playerInSightRange;
     public LayerMask whatIsPlayer;
 
+    public float rotationSpeed;
     public Transform spawnPoint;
+    private float fireRate = 1;
     public GameObject bulletPrefab;
-    private float fireRate = 2f;
 
 
     public void Update()
@@ -32,6 +33,7 @@ public class TurretController : MonoBehaviour
     private void LookAtPlayer()
     {
         transform.LookAt(player);
+        Debug.Log("I see u");
     }
 
     private void OnDrawGizmosSelected()
@@ -40,16 +42,16 @@ public class TurretController : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
 
     }
+    
 
     IEnumerator shoot()
     {
-        // yield return new WaitForSeconds(5);
-        
-        GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
-        bullet.transform.rotation = transform.rotation;
-        bullet.transform.position = spawnPoint.position;
-        yield return new WaitForSeconds(10 / (float)fireRate);
-        
-        
+        yield return new WaitForSeconds(5);
+
+            GameObject bullet = GameObject.Instantiate<GameObject>(bulletPrefab);
+            bullet.transform.rotation = transform.rotation;
+            bullet.transform.position = spawnPoint.position;
+            yield return new WaitForSeconds(1 / (float) fireRate);
+
     }
 }
