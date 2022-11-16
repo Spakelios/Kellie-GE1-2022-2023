@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,10 @@ public class TurretController2 : MonoBehaviour
     private Quaternion end;
 
     public Transform player;
-        
+
+    public GameObject bullet;
+    public Transform spawnPoint;
+
 
     private float t = 0;
 
@@ -29,10 +33,12 @@ public class TurretController2 : MonoBehaviour
         start = q;
 
         end = Quaternion.LookRotation(player.position - transform.position);
-
+        
         t = 0;
-
+        
         transform.rotation = start;
+
+    
 
     }
 
@@ -44,5 +50,30 @@ public class TurretController2 : MonoBehaviour
 
         Quaternion q = Quaternion.Slerp(start, end, t);
         transform.rotation = Quaternion.Slerp(transform.rotation, end, Time.deltaTime);
+    }
+
+    IEnumerator pew()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        Instantiate(bullet, spawnPoint.position, transform.rotation);
+
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StartCoroutine(pew());
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            StopCoroutine(pew());
+        }
     }
 }
