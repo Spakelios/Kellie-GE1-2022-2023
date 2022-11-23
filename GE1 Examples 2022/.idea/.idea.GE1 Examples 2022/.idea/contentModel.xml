@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\kelme\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kelme\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_GE1 Examples 2022.-691103212.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kelme\Kellie-GE1-2022-2023\GE1 Examples 2022" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AITank.cs" t="Include" />
+        <e p="BoidShader.shader" t="Include" />
+        <e p="Bullet.cs" t="Include" />
+        <e p="CameraFollow.cs" t="Include" />
+        <e p="Cube1.cs" t="Include" />
+        <e p="DistanceColors.shader" t="Include" />
+        <e p="GameManager.cs" t="Include" />
+        <e p="Generator.cs" t="Include" />
+        <e p="HeightColor.shader" t="Include" />
+        <e p="InfiniteTerrain.cs" t="Include" />
+        <e p="Jet_Engine_Flames" t="Include">
+          <e p="Jet Engine Flames - Readme.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="AnimatedTextureUVs.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="TransparentReflectiveDiffuse_VIP.shader" t="Include" />
+          </e>
+        </e>
+        <e p="QuaternionTest.cs" t="Include" />
+        <e p="RotateMe.cs" t="Include" />
+        <e p="Shooting.cs" t="Include" />
+        <e p="Spawner.cs" t="Include" />
+        <e p="Tank.cs" t="Include" />
+        <e p="TankController.cs" t="Include" />
+        <e p="TankControls.cs" t="Include" />
+        <e p="TerrainTile.cs" t="Include" />
+        <e p="Thruster.cs" t="Include" />
+        <e p="TurretController.cs" t="Include" />
+        <e p="TurretController2.cs" t="Include" />
+        <e p="Utilities.cs" t="Include" />
+        <e p="Wall.cs" t="Include" />
+      </e>
+      <e p="GE1 Examples 2022.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
